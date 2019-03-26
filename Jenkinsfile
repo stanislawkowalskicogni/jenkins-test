@@ -4,7 +4,7 @@ pipeline {
             label "${whichNodes}"
         }
     }
-    properties([copyArtifactPermission("test123")])
+    options([copyArtifactPermission("test123")])
     stages {
         stage('build') {
             steps {
