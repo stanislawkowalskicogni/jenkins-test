@@ -1,10 +1,10 @@
 pipeline {
     agent {
         node {
-            properties([copyArtifactPermission("test123")])
             label "${whichNodes}"
         }
     }
+    properties([copyArtifactPermission("test123")])
     stages {
         stage('build') {
             steps {
