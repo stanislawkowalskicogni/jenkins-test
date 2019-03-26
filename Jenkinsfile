@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-    properties([$class: 'CopyArtifactPermissionProperty', projectNames: 'jlr-odyssey-xmetal-cust-release'])
+    agent {
+        node {
+            properties([$class: 'CopyArtifactPermissionProperty', projectNames: 'jlr-odyssey-xmetal-cust-release'])
+            label "${whichNodes}"
+        }
+    }
     stages {
         stage('build') {
             steps {
