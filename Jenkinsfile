@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options{
-        copyArtifactPermission("test123")
+        copyArtifactPermission("copy-from-jenkins-test")
     }
     stages {
         stage('build') {
