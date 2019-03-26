@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label "${whichNodes}"
-        }
-    }
+    agent any
     options{
         copyArtifactPermission("test123")
     }
