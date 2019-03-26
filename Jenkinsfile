@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            properties(copyArtifactPermission("test123"))
+            properties([copyArtifactPermission("test123")])
             label "${whichNodes}"
         }
     }
