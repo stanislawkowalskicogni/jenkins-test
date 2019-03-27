@@ -6,12 +6,16 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                echo 'after1'
                 bat './gradlew build --no-daemon'
+                echo 'before1'
             }
         }
         stage('archive') {
             steps {
+                echo 'after2'
                 archiveArtifacts artifacts: '/build/libs/*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
+                echo 'before2'
             }
         }
         stage('trigger build') {
