@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    options{
-        copyArtifactPermission("jenkins-copy-test")
-    }
+//    options{
+//        copyArtifactPermission("jenkins-copy-test")
+//    }
     stages {
         stage('build') {
             steps {
