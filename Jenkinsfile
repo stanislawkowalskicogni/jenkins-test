@@ -10,9 +10,9 @@ pipeline {
                 bat './gradlew build --no-daemon'
             }
         }
-        stage('Archive XMetal Resources') {
+        stage('archive') {
             steps {
-                archiveArtifacts artifacts: archivesLocation + '/*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '/*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
             }
         }
     }
