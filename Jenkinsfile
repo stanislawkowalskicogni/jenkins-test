@@ -24,7 +24,8 @@ pipeline {
                 build job: 'jenkins-copy-test',
                         parameters: [string(name: 'BRANCH_NAME', value: URLDecoder.decode(env['BRANCH_NAME'], "UTF-8").replaceAll("/", "-")),
                                      string(name: 'SNAPSHOT_NAME', value: 'SNAPSHOT')],
-                        propagate: false
+                        propagate: false,
+                        quietPeriod: 30
             }
         }
     }
