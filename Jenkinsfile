@@ -1,5 +1,3 @@
-final String branchName = URLDecoder.decode(env['BRANCH_NAME'], "UTF-8")
-
 pipeline {
     agent any
 //    options{
@@ -18,8 +16,9 @@ pipeline {
         }
         stage('trigger build') {
             steps {
+                echo URLDecoder.decode(env['BRANCH_NAME'], "UTF-8")
                 build job: 'jenkins-copy-test',
-                        parameters: [string(name: 'BRANCH_NAME', value: branchName.replaceAll("/", "-")),
+                        parameters: [string(name: 'BRANCH_NAME', value: URLDecoder.decode(env['BRANCH_NAME'], "UTF-8").replaceAll("/", "-")),
                                      string(name: 'SNAPSHOT_NAME', value: 'SNAPSHOT')],
                         propagate: false
             }
