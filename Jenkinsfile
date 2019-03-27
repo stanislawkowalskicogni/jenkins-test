@@ -25,7 +25,8 @@ pipeline {
                         parameters: [string(name: 'BRANCH_NAME', value: URLDecoder.decode(env['BRANCH_NAME'], "UTF-8").replaceAll("/", "-")),
                                      string(name: 'SNAPSHOT_NAME', value: 'SNAPSHOT')],
                         propagate: false,
-                        quietPeriod: 30
+                        quietPeriod: 30,
+                        wait: false
             }
         }
     }
