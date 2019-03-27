@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     options{
         copyArtifactPermission("jenkins-copy-test")
     }
