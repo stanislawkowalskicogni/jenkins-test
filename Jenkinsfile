@@ -11,4 +11,9 @@ pipeline {
             }
         }
     }
+    stage('Archive XMetal Resources') {
+        steps {
+            archiveArtifacts artifacts: archivesLocation + '/*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
+        }
+    }
 }
