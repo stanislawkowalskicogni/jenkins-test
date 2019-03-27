@@ -12,7 +12,7 @@ pipeline {
         }
         stage('archive') {
             steps {
-                archiveArtifacts artifacts: '*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '/build/libs/*.jar*', allowEmptyArchive: false, onlyIfSuccessful: true
             }
         }
     }
